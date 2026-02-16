@@ -8,14 +8,14 @@ module.exports = defineConfig({
   // 默认是/ , /表示所有资源从根目录下查找，布署到服务器，也要根目录，不然就找不到项目资源。
   // 如果所有资源没有布置到服务器根目标，但如果有dist目录包着，就访问不到资源。
   //改成./， 就是相对目录。 布到服务器，可以用dist文件夹包着。
-  publicPath: './',
-  lintOnSave: env !== "production",//控制ESLint词法检查类型 false关闭，warnin警告
+  //publicPath: './',
+  //lintOnSave: env !== "production",//控制ESLint词法检查类型 false关闭，warnin警告
 
   //控制babel-loader编译范围， false 不编译node_modules的第3方模块。
   //一般第3方模块都编译好了，所以不用再编译一次。
-  transpileDependencies: false,
+  //transpileDependencies: false,
   //设置是否需要生成js对应的map调试文件，
-  productionSourceMap: false,
+  //productionSourceMap: false,
 
   // $$$$   configureWebpack的值可以是对象，或都函数  ￥￥￥￥￥￥￥￥￥
   //configureWebpack的值是对象，
@@ -54,17 +54,17 @@ module.exports = defineConfig({
         //可以输出config, 来查看vue的webpack配置。
         //console.log(JSON.stringify(config, null, 2));
           //想要新增或修改配置，先找到vue的webpack配置的对应具体位置module.rules，然后在这个对应的位置上进行新增或修改config.module.rules.push()。
-        config.module.rules.push(
-            {
-                test: /\.(png|jpe?g|gif|webp|avif)(\?.*)?$/,
-                use: {
-                  loader: 'url-loader',
-                  options: {
-                    limit: 10240 //小于10kb，转成base64
-                  }
-                }
-            }
-        )
+        // config.module.rules.push(
+        //     {
+        //         test: /\.(png|jpe?g|gif|webp|avif)(\?.*)?$/,
+        //         use: {
+        //           loader: 'url-loader',
+        //           options: {
+        //             limit: 10240 //小于10kb，转成base64
+        //           }
+        //         }
+        //     }
+        // )
 
         if (env === 'production') {
             // 修改生产环境的配置。
@@ -91,24 +91,24 @@ module.exports = defineConfig({
     /**
      * 快捷的处理CSS的各个loader
      */
-    css:{
-        loaderOptions: {
-            postcss: {
-
-            }
-        }
-    },
+    // css:{
+    //     loaderOptions: {
+    //         postcss: {
+    //
+    //         }
+    //     }
+    // },
     //修改 webpack-dev-server 的配置。
     devServer: {
         host: '127.0.0.1',
         open: true,
         //跨域代理
-        proxy: {
-            '/api': {
-                target: 'http://news-at.zhihu.com',
-                changeOrigin: true,
-            }
-        }
+        // proxy: {
+        //     '/api': {
+        //         target: 'http://news-at.zhihu.com',
+        //         changeOrigin: true,
+        //     }
+        // }
     },
 
 })
