@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <EventMain></EventMain>
+    <RefMain></RefMain>
   </div>
 </template>
 
 <script>
-import EventMain from "@/views/pre/Event/EventMain.vue";
+import RefMain from "@/views/pre/Ref/RefMain.vue";
 export default {
   name: 'App',
   components: {
-    EventMain,
+    RefMain,
   },
 }
 </script>

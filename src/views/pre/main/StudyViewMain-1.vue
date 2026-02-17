@@ -22,7 +22,7 @@
 //import PersonalInfo from './views/PersonalInfo.vue';
 //第1，导入
 //import TabDemo from './views/TabDemo.vue';
-import ChildDemo from "@/views/pre/tabs/ChildDemo.vue";
+import ChildDemo from "@/views/pre/main/tabs/ChildDemo.vue";
 export default {
   name: 'StudyView',
   components: {

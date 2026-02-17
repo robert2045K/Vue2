@@ -33,9 +33,9 @@
 </template>
 
 <script>
-import TabNews from "@/views/pre/tabs/TabNews.vue";
-import TabMusic from "@/views/pre/tabs/TabMusic.vue";
-import TabMovie from "@/views/pre/tabs/TabMovie.vue";
+import TabNews from "@/views/pre/main/tabs/TabNews.vue";
+import TabMusic from "@/views/pre/main/tabs/TabMusic.vue";
+import TabMovie from "@/views/pre/main/tabs/TabMovie.vue";
 
 export default {
   name: "TabDemo",
