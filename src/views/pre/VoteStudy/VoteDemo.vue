@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import VoteTest from "@/views/pre/Vote/VoteTest.vue";
+import VoteTest from "@/views/pre/VoteStudy/VoteTest.vue";
 export default {
   name: 'VoteDemo',
   components:[
