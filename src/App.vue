@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <RefMain></RefMain>
+    <VoteMain></VoteMain>
   </div>
 </template>
 
 <script>
-import RefMain from "@/views/pre/Ref/RefMain.vue";
+import VoteMain from "@/views/pre/Vote/VoteMain.vue";
 export default {
   name: 'App',
   components: {
-    RefMain,
+    VoteMain,
   },
 }
 </script>
