@@ -10,6 +10,7 @@ module.exports = defineConfig({
   //改成./， 就是相对目录。 布到服务器，可以用dist文件夹包着。
   //publicPath: './',
   //lintOnSave: env !== "production",//控制ESLint词法检查类型 false关闭，warnin警告
+    lintOnSave :false,
 
   //控制babel-loader编译范围， false 不编译node_modules的第3方模块。
   //一般第3方模块都编译好了，所以不用再编译一次。

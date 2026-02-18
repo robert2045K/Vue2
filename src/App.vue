@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <VoteMain></VoteMain>
+    <ExtendMain></ExtendMain>
   </div>
 </template>
 
 <script>
-import VoteMain from "@/views/pre/Vote/VoteMain.vue";
+import ExtendMain from "@/views/pre/components/Extend/ExtendMain.vue";
 export default {
   name: 'App',
   components: {
-    VoteMain,
+    ExtendMain
   },
 }
 </script>
