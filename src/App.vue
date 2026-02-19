@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <ExtendMain></ExtendMain>
+    <VueXManager></VueXManager>
   </div>
 </template>
 
 <script>
-import ExtendMain from "@/views/pre/components/Extend/ExtendMain.vue";
+import VueXManager from "@/views/pre/VueX/modelManager/VueXManager.vue";
 export default {
   name: 'App',
   components: {
-    ExtendMain
+    VueXManager
   },
 }
 </script>

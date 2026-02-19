@@ -12,7 +12,7 @@ const store = new Vuex.Store({
    * 和组件内的data作用一样。都是深度劫持
    * */
   state: {
-    spuNum:10,
+    supNum:10,
     oppNum:20
   },
   /**
@@ -45,7 +45,7 @@ const store = new Vuex.Store({
     }
   },
   /**
-   * 异步修改state
+   * 异步修改state, 代码有阻塞，等待。 有async, await
    * 在异步操作结束后，用commit通知mutations中的方法执行。
    * context: store实例的精简版
    * store.dispatch('changeAsync')
@@ -61,6 +61,8 @@ const store = new Vuex.Store({
         } catch (_) {
           console.log('error');
         }
+
+
        //通知 mutations 的change方法执行。
        context.commit('change', payload)
     }
