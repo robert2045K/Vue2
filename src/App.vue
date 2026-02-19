@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <VueXManager></VueXManager>
+    <TodoMain></TodoMain>
   </div>
 </template>
 
 <script>
-import VueXManager from "@/views/pre/VueX/modelManager/VueXManager.vue";
+import TodoMain from "@/views/TodoList/TodoMain.vue";
 export default {
   name: 'App',
   components: {
-    VueXManager
+    TodoMain
   },
 }
 </script>
