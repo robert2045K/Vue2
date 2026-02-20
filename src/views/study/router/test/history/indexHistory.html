@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 模板</title>
+    <style>
+
+    </style>
+</head>
+<!--模仿history页面路由。-->
+<body>
+    <nav class="nav-box">
+        <a href="/">首页</a>
+        <a href="/product">产品中心</a>
+        <a href="/personal">个人中心</a>
+    </nav>
+    <div class="view-box"> </div>
+    <script>
+        const viewBox = document.querySelector('.view-box');
+        const navBox = document.querySelector('.nav-box')
+        //匹配规则路由表
+        const routes= [
+            {
+                path:'/',
+                component:"首页的内容",
+            },
+            {
+                path:'/product',
+                component:"产品中心的内容",
+            },
+            {
+                path:'/personal',
+                component:"个人中心的内容",
+            }
+        ];
+
+        const matchRoute = function matchRoute() {
+            let path = location.pathname; //获取当前页面的路径。
+            let item = routes.find( item=>item.path === path );
+            let component = '404页面';
+            if(item) {
+                component = item.component;
+            }
+            viewBox.innerHTML = component;
+        }
+
+        navBox.onclick = function(ev) {
+            let target = ev.target;
+            if(target.tagName==='A'){
+                //阻止a标签的点击行为。
+                ev.preventDefault();
+
+                //pushState：新增一条路由历史记录
+                //注意，history只是改变了地址栏的参数。并没更新视图。
+                history.pushState({}, null, target.getAttribute('href'));
+
+                //根据当前的页面地址， 改变视图。
+                //也就是说，打开新页面，需要2个步骤，第1，改变址址栏参数， 第2，更新页面内容视图。
+                matchRoute();
+
+                //真实的项目： 应该也是这样，切换路由，也就向平台请求数据。
+            }
+        }
+        //默认
+        history.pushState({}, null, '/');
+        matchRoute();
+        //点击网页前进、回退时，
+        window.onpopstate = matchRoute;
+    </script>
+</body>
+
+</html>

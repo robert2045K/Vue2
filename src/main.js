@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/study'
 //导入vuex
-import store from './store/modelManager.js'
+import store from './store/study/modelManager.js'
 import './element.js'
 
 import vm from './EventBus.js'

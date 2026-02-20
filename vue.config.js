@@ -8,7 +8,7 @@ module.exports = defineConfig({
   // 默认是/ , /表示所有资源从根目录下查找，布署到服务器，也要根目录，不然就找不到项目资源。
   // 如果所有资源没有布置到服务器根目标，但如果有dist目录包着，就访问不到资源。
   //改成./， 就是相对目录。 布到服务器，可以用dist文件夹包着。
-  //publicPath: './',
+  publicPath: './',
   //lintOnSave: env !== "production",//控制ESLint词法检查类型 false关闭，warnin警告
     lintOnSave :false,
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 模板</title>
+    <style>
+
+    </style>
+</head>
+<!--模仿哈希页面路由。-->
+<body>
+    <nav class="nav-box">
+        <a href="#/">首页</a>
+        <a href="#/product">产品中心</a>
+        <a href="#/personal">个人中心</a>
+    </nav>
+    <div class="view-box"> </div>
+    <script>
+        const viewBox = document.querySelector('.view-box');
+        //设置页面默认的哈希值是#/, #/代表首页。
+        location.hash='#/'
+        //匹配规则路由表
+        const routes= [
+            {
+              path:'/',
+              component:"首页的内容",
+            },
+            {
+                path:'/product',
+                component:"产品中心的内容",
+            },
+            {
+                path:'/personal',
+                component:"个人中心的内容",
+            }
+        ]
+
+        const matchRoute = function matchRoute() {
+            //获取当前页面的hash值。
+            // location.hash是地址栏的hash值。不管是什么方法改变了，只要地址栏变了，location.hash实时跟着变。
+            let hash = location.hash.slice(1);
+            let component = '404页面';
+            let item = routes.find(item=>item.path===hash);
+            if(item) {
+                component = item.component;
+            }
+            viewBox.innerHTML = component;
+        }
+
+        matchRoute();
+
+        //当地址栏的hash值变化之后，需要实时去匹配。
+        window.onhashchange = matchRoute;
+    </script>
+</body>
+
+</html>

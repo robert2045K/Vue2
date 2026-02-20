@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <TodoMain></TodoMain>
+    <RouterMain></RouterMain>
   </div>
 </template>
 
 <script>
-import TodoMain from "@/views/TodoList/TodoMain.vue";
+import RouterMain from "@/views/study/router/RouterMain.vue";
 export default {
   name: 'App',
   components: {
-    TodoMain
+    RouterMain
   },
 }
 </script>

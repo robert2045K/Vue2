@@ -1,3 +1,5 @@
+
+//全局事件 EventBus
 import Vue from 'vue';
 let vm = new Vue ({
     data: {

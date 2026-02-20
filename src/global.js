@@ -1,5 +1,7 @@
 import Vue from 'vue'
-import Toast from '@/views/pre/components/Extend/ToastCom.vue';
+import Toast from '@/views/study/pre/components/Extend/ToastCom.vue';
+
+
 
 //用Vue.extend创建组件
 let ToastCom = Vue.extend(Toast);
