@@ -6,7 +6,8 @@ import store from './store/study/modelManager.js'
 import './element.js'
 
 import vm from './EventBus.js'
-import './global.js'
+import './global.js';
+import './rem.js'
 
 
 //全局混入
@@ -22,6 +23,8 @@ Vue.mixin({
 // Vue.use(ElementUI);
 
 /**按需引入ElementUI*/
+
+
 
 
 Vue.config.productionTip = false
